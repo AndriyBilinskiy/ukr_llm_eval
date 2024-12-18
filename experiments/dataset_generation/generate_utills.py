@@ -5,7 +5,7 @@ def generate_modus_ponens(grouped_causes, consequences, names, pronoun):
             for consequence in consequences[group]:
                 for name in names:
                     question = {
-                        'context': f"Якщо хтось {cause}, тоді {pronoun} {consequence}.",
+                        'context': f"Якщо хтось {cause}, тоді він {consequence}.",
                         'qa_pairs': [
                             {"question": f"Якщо {name} {cause}, це означає, що {pronoun} {consequence}?",
                              "answer": "так"},
