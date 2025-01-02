@@ -1,10 +1,10 @@
 from config import LOGIC_RULE_TEMPLATES
 
-def create_question(template, cause, cause_male, consequence, consequence_male, name, pronoun):
+def create_question(template, params):
     question = {
-        'context': template['context'].format(cause_male=cause_male, consequence_male=consequence_male),
+        'context': template['context'].format(**params),
         'qa_pairs': [
-            {"question": pair['question'].format(name=name, cause=cause, consequence=consequence, pronoun=pronoun),
+            {"question": pair['question'].format(**params),
              "answer": pair['answer']}
             for pair in template['qa_pairs']
         ]
@@ -12,14 +12,22 @@ def create_question(template, cause, cause_male, consequence, consequence_male, 
     return question
 
 
-def generate_questions_from_template(template, grouped_causes_female, grouped_causes_male, consequences_female, consequences_male, names_female, names_male):
+def generate_cause_consequence_questions_from_template(template, grouped_causes_female, grouped_causes_male, consequences_female, consequences_male, names_female, names_male):
     questions_male = []
     questions_female = []
     for group, group_causes in grouped_causes_male.items():
         for cause in group_causes:
             for consequence in consequences_male[group]:
                 for name in names_male:
-                    question = create_question(template, cause, cause, consequence, consequence, name, 'він')
+                    params = {
+                        'cause': cause,
+                        'cause_male': cause,
+                        'consequence': consequence,
+                        'consequence_male': consequence,
+                        'name': name,
+                        'pronoun': 'він'
+                    }
+                    question = create_question(template, params)
                     questions_male.append(question)
     for group, group_causes in grouped_causes_female.items():
         for i in range(len(group_causes)):
@@ -29,15 +37,55 @@ def generate_questions_from_template(template, grouped_causes_female, grouped_ca
                 consequence = consequences_female[group][j]
                 consequence_male = consequences_male[group][j]
                 for name in names_female:
-                    question = create_question(template, cause, cause_male, consequence, consequence_male, name, 'вона')
+                    params = {
+                        'cause': cause,
+                        'cause_male': cause_male,
+                        'consequence': consequence,
+                        'consequence_male': consequence_male,
+                        'name': name,
+                        'pronoun': 'вона'
+                    }
+                    question = create_question(template, params)
                     questions_female.append(question)
     return {'male_questions': questions_male, 'female_questions': questions_female}
 
 
-def generate_questions_according_to_logic_rule(grouped_causes_female, grouped_causes_male, consequences_female, consequences_male, names_female, names_male, rule):
-    if rule not in LOGIC_RULE_TEMPLATES:
-        print(f"Rule {rule} is not supported. Choose one of the following: {LOGIC_RULE_TEMPLATES.keys()}")
-    else:
+def generate_select_true_fact_questions_from_template(template, facts, names):
+    questions = []
+    for fact1 in facts:
+        for fact2 in facts:
+            if fact1 == fact2:
+                continue
+            for i in range(len(names)-1):
+                params = {
+                    'fact1': fact1,
+                    'fact2': fact2,
+                    'name1': names[i],
+                    'name2': names[i+1]
+                }
+                question = create_question(template, params)
+                questions.append(question)
+    return questions
+
+def generate_questions_from_cause_consequence_templates(grouped_causes_female, grouped_causes_male, consequences_female, consequences_male, names_female, names_male):
+    questions = {}
+    for rule  in LOGIC_RULE_TEMPLATES:
         template = LOGIC_RULE_TEMPLATES[rule]
-        return generate_questions_from_template(template, grouped_causes_female, grouped_causes_male,
-                                                consequences_female, consequences_male, names_female, names_male)
+        if template['question_type'] == 'cause_consequence':
+            questions[rule] =  generate_cause_consequence_questions_from_template(template, grouped_causes_female, grouped_causes_male,
+                                                                      consequences_female, consequences_male, names_female, names_male)
+            print(f"Generating questions for {rule} rule")
+        else:
+            pass
+    return questions
+
+def generate_questions_from_select_true_fact_templates(facts, names):
+    questions = {}
+    for rule  in LOGIC_RULE_TEMPLATES:
+        print(f"Generating questions for {rule} rule")
+        template = LOGIC_RULE_TEMPLATES[rule]
+        if template['question_type'] == 'select_true_fact':
+            questions[rule] =  generate_select_true_fact_questions_from_template(template, facts, names)
+        else:
+            pass
+    return questions
