@@ -110,7 +110,7 @@ def generate_constructive_dillema_questions_from_template(template, grouped_caus
                             'consequence_male1': consequence_male1,
                             'cause2': group_causes2[0],
                             'cause_male2': grouped_causes_male[group2][0],
-                            'consequence2': consequences_male[group2][0],
+                            'consequence2': consequences_female[group2][0],
                             'consequence_male2': consequences_male[group2][0],
                             'name': name,
                             'pronoun': 'вона'
