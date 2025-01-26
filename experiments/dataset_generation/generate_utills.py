@@ -67,8 +67,8 @@ def generate_select_true_fact_questions_from_template(template, facts, names):
                 questions.append(question)
     return questions
 
-def generate_constructive_dillema_questions_from_template(template, grouped_causes_female, grouped_causes_male,
-                                                                      consequences_female, consequences_male, names_female, names_male):
+def generate_constructive_dilemma_questions_from_template(template, grouped_causes_female, grouped_causes_male,
+                                                          consequences_female, consequences_male, names_female, names_male):
     questions_male = []
     questions_female = []
     for group1, group_causes1 in grouped_causes_male.items():
@@ -127,9 +127,9 @@ def generate_questions_from_cause_consequence_templates(grouped_causes_female, g
         if template['question_type'] == 'cause_consequence':
             questions[rule] =  generate_cause_consequence_questions_from_template(template, grouped_causes_female, grouped_causes_male,
                                                                       consequences_female, consequences_male, names_female, names_male)
-        elif template['question_type'] == 'constructive_dillema':
-            questions[rule] = generate_constructive_dillema_questions_from_template(template, grouped_causes_female, grouped_causes_male,
-                                                                      consequences_female, consequences_male, names_female, names_male)
+        elif template['question_type'] == 'con/destructive_dilemma':
+            questions[rule] = generate_constructive_dilemma_questions_from_template(template, grouped_causes_female, grouped_causes_male,
+                                                                                    consequences_female, consequences_male, names_female, names_male)
         else:
             pass
         print(f"Generating questions for {rule} rule")
