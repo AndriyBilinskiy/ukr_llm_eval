@@ -50,15 +50,15 @@ LOGIC_RULE_TEMPLATES = {
 
         ]
     },
-    'destructive_dilemma': {
-        'question_type': 'condestructive_dilemma',
-        'context': "Якщо хтось {cause_male1}, тоді він {consequence_male1}. Якщо хтось {cause_male2}, тоді він {consequence_male2}. Хоча б одне з наступних тверджень є правдивим: 1. {name} {cause1}, 2. {name} {cause2}. Правдивим може бути як один з цих фактів, так і два факти одночасно.",
-        'qa_pairs': [
-            {"question": "Враховуючи контекст, чи можна зробити висновок, що хоча б одне з наступних тверджень завжди є правдивим? 1. {name} {consequence1}, 2. {pronoun} {consequence2}?", "answer": "так"},
-            {"question": "Враховуючи контекст, чи можна зробити висновок, що хоча б одне з наступних тверджень завжди є правдивим? 1. {name} не {consequence1}, 2. {pronoun} {consequence2}?", "answer": "ні"},
-            {"question": "Враховуючи контекст, чи можна зробити висновок, що хоча б одне з наступних тверджень завжди є правдивим? 1. {name} не {consequence1}, 2. {pronoun} не {consequence2}?", "answer": "ні"},
-            {"question": "Враховуючи контекст, чи можна зробити висновок, що хоча б одне з наступних тверджень завжди є правдивим? 1. {name} {consequence1}, 2. {pronoun} не {consequence2}?", "answer": "ні"},
-
-        ]
-    },
+    # 'destructive_dilemma': {
+    #     'question_type': 'con/destructive_dilemma',
+    #     'context': "Якщо хтось {cause_male1}, тоді він {consequence_male1}. Якщо хтось {cause_male2}, тоді він {consequence_male2}. Хоча б одне з наступних тверджень є правдивим: 1. {name} {cause1}, 2. {name} {cause2}. Правдивим може бути як один з цих фактів, так і два факти одночасно.",
+    #     'qa_pairs': [
+    #         {"question": "Враховуючи контекст, чи можна зробити висновок, що хоча б одне з наступних тверджень завжди є правдивим? 1. {name} {consequence1}, 2. {pronoun} {consequence2}?", "answer": "так"},
+    #         {"question": "Враховуючи контекст, чи можна зробити висновок, що хоча б одне з наступних тверджень завжди є правдивим? 1. {name} не {consequence1}, 2. {pronoun} {consequence2}?", "answer": "ні"},
+    #         {"question": "Враховуючи контекст, чи можна зробити висновок, що хоча б одне з наступних тверджень завжди є правдивим? 1. {name} не {consequence1}, 2. {pronoun} не {consequence2}?", "answer": "ні"},
+    #         {"question": "Враховуючи контекст, чи можна зробити висновок, що хоча б одне з наступних тверджень завжди є правдивим? 1. {name} {consequence1}, 2. {pronoun} не {consequence2}?", "answer": "ні"},
+    #
+    #     ]
+    # },
 }

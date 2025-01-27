@@ -1,4 +1,5 @@
 from config import LOGIC_RULE_TEMPLATES
+import random
 
 def create_question(template, params):
     question = {
@@ -16,9 +17,10 @@ def generate_cause_consequence_questions_from_template(template, grouped_causes_
     questions_male = []
     questions_female = []
     for group, group_causes in grouped_causes_male.items():
+        number_of_names = min(len(names_male), len(group_causes)*len(consequences_male[group]) // 10)
         for cause in group_causes:
             for consequence in consequences_male[group]:
-                for name in names_male:
+                for name in random.sample(names_male, number_of_names):
                     params = {
                         'cause': cause,
                         'cause_male': cause,
@@ -30,13 +32,14 @@ def generate_cause_consequence_questions_from_template(template, grouped_causes_
                     question = create_question(template, params)
                     questions_male.append(question)
     for group, group_causes in grouped_causes_female.items():
+        number_of_names = min(len(names_female), len(group_causes)*len(consequences_female[group]) // 10)
         for i in range(len(group_causes)):
             cause = group_causes[i]
             cause_male = grouped_causes_male[group][i]
             for j in range(len(consequences_female[group])):
                 consequence = consequences_female[group][j]
                 consequence_male = consequences_male[group][j]
-                for name in names_female:
+                for name in random.sample(names_female, number_of_names):
                     params = {
                         'cause': cause,
                         'cause_male': cause_male,
@@ -56,12 +59,14 @@ def generate_select_true_fact_questions_from_template(template, facts, names):
         for fact2 in facts:
             if fact1 == fact2:
                 continue
-            for i in range(len(names)-1):
+            number_of_names = min(len(names), 2)
+            names_sample = random.sample(names, number_of_names)
+            for i in range(number_of_names - 1):
                 params = {
                     'fact1': fact1,
                     'fact2': fact2,
-                    'name1': names[i],
-                    'name2': names[i+1]
+                    'name1': names_sample[i],
+                    'name2': names_sample[i+1]
                 }
                 question = create_question(template, params)
                 questions.append(question)
