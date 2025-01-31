@@ -34,7 +34,7 @@ LOGIC_RULE_TEMPLATES = {
         'context':'Хоча б одне з наступних тверджень є правдивим: 1. {name1} {fact1}, 2. {name2} {fact2}. Правдивим може бути як один з цих фактів, так і два факти одночасно.',
         'qa_pairs': [
             {"question": "Якщо {name1} не {fact1} чи означає це, що {name2} {fact2}?", "answer": "так"},
-            {"question": "Якщо {name1} не {fact1} чи означає це, що {name2} не {fact2}?", "answer": "так"},
+            {"question": "Якщо {name1} не {fact1} чи означає це, що {name2} не {fact2}?", "answer": "ні"},
             {"question": "Якщо {name1} {fact1} чи означає це, що {name2} не {fact2}?", "answer": "ні"},
             {"question": "Якщо {name1} {fact1} чи означає це, що {name2} {fact2}?", "answer": "ні"}
         ]
