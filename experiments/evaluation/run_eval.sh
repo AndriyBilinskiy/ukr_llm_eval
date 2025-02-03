@@ -7,6 +7,8 @@ if python -c "import torch; print(torch.cuda.is_available())" | grep "True"; the
 fi
 
 echo "Using device: $DEVICE"
+echo "Using splits: $SPLITS"
+echo "Number of samples per split: $NUM_SAMPLES_PER_SUBSET"
 
 # Define splits
 IFS=',' read -r -a SPLIT_ARRAY <<< "$SPLITS"
@@ -23,6 +25,6 @@ for SPLIT in "${SPLIT_ARRAY[@]}"; do
     --include_path ./ \
     --tasks config \
     --output "$OUTPUT_DIR" \
-    --limit 1 \
+    --limit "$NUM_SAMPLES_PER_SUBSET" \
     --log_samples
 done
