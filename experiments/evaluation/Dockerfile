@@ -19,13 +19,7 @@ RUN pip install --upgrade pip \
     lm-eval \
     huggingface_hub
 
-ARG DEVICE="cpu"
-
-RUN if [ "$DEVICE" = "cuda" ]; then \
-        pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118; \
-    else \
-        pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu; \
-    fi
+RUN  pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
 
 WORKDIR /workspace
 VOLUME ["/workspace/output"]
