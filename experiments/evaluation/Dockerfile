@@ -28,6 +28,7 @@ RUN if [ "$DEVICE" = "cuda" ]; then \
     fi
 
 WORKDIR /workspace
+VOLUME ["/workspace/output"]
 COPY config.yaml /workspace/config.yaml
 COPY run_eval.sh /workspace/run_eval.sh
 
