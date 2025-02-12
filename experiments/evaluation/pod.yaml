@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: eval-pod
+  namespace: proj-andriy-ba
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: NotIn
+                values:
+                  - malea-srv01
+  restartPolicy: Never
+  containers:
+    - name: eval-pod
+      # image: ultralytics/ultralytics:latest
+      image: andriybilinskiy/eval_lm
+      envFrom:
+        - configMapRef:
+            name: proj-andriy-ba-cm
+      resources:
+        requests:
+          nvidia.com/gpu: "1" # GPUs for each training run
+          ephemeral-storage: "12Gi"
+        limits:
+          nvidia.com/gpu: "1" # same as requests nvidia.com/gpu
+          ephemeral-storage: "14Gi"
+      volumeMounts: # Mount the persistent volume
+        - name: data
+          mountPath: /workspace/output
+        - name: shared-memory
+          mountPath: /dev/shm
+  volumes: 
+    - name: shared-memory
+      emptyDir:
+        medium: Memory
+    - name: data
+      persistentVolumeClaim:
+        claimName: proj-andriy-ba-pvc
+
+
