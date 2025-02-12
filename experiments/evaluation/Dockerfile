@@ -12,14 +12,14 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
+RUN  pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+
 RUN pip install --upgrade pip \
     && pip install \
     transformers \
     accelerate \
     lm-eval \
     huggingface_hub
-
-RUN  pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
 
 WORKDIR /workspace
 VOLUME ["/workspace/output"]
