@@ -19,7 +19,10 @@ RUN pip install --upgrade pip \
     transformers \
     accelerate \
     lm-eval \
-    huggingface_hub
+    huggingface_hub \
+    sentencepiece \
+    protobuf \
+    grpcio
 
 WORKDIR /workspace
 VOLUME ["/workspace/output"]
