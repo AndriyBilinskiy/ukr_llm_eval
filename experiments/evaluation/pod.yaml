@@ -17,7 +17,8 @@ spec:
   containers:
     - name: eval-pod
       # image: ultralytics/ultralytics:latest
-      image: andriybilinskiy/eval_lm_linux_many_models
+      #image: andriybilinskiy/eval_lm_linux_many_models
+      image: andriibilinskii/eval_lm_linux_many_models:latest
       envFrom:
         - configMapRef:
             name: proj-andriy-ba-cm
