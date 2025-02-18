@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: eval-pod2
+  name: eval-pod0
   namespace: proj-andriy-ba
 spec:
   affinity:
@@ -18,20 +18,21 @@ spec:
     - name: eval-pod
       # image: ultralytics/ultralytics:latest
       #image: andriybilinskiy/eval_lm_linux_many_models
-      image: andriibilinskii/eval_lm_linux_many_models:latest
-      # command: ["sleep", "360000"] 
+      # image: andriibilinskii/eval_lm_linux_many_models:latest
+      image: andriibilinskii/eval_lm_linux_no_cache:latest 
+      command: ["sleep", "360000"] 
       envFrom:
         - configMapRef:
             name: proj-andriy-ba-cm
-      resources:
-        requests:
-          nvidia.com/gpu: "1" # GPUs for each training run
-          # ephemeral-storage: "12Gi"
-          ephemeral-storage: "100Gi"
-        limits:
-          nvidia.com/gpu: "1" # same as requests nvidia.com/gpu
-          # ephemeral-storage: "14Gi"
-          ephemeral-storage: "100Gi"
+      # resources:
+      #   requests:
+      #     nvidia.com/gpu: "1" # GPUs for each training run
+      #     # ephemeral-storage: "12Gi"
+      #     ephemeral-storage: "100Gi"
+      #   limits:
+      #     nvidia.com/gpu: "1" # same as requests nvidia.com/gpu
+      #     # ephemeral-storage: "14Gi"
+      #     ephemeral-storage: "100Gi"
       volumeMounts: # Mount the persistent volume
         - name: data
           mountPath: /workspace/output
