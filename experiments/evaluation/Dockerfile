@@ -3,9 +3,7 @@ FROM python:3.10-slim
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
-    PYTHONIOENCODING=UTF-8 \
-    HF_HOME=/root/.cache/huggingface \
-    TRANSFORMERS_CACHE=/root/.cache/huggingface/transformers
+    PYTHONIOENCODING=UTF-8
 
 RUN apt-get update && apt-get install -y \
     git \

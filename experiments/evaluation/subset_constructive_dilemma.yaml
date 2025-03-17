@@ -1,0 +1,16 @@
+task: subset_constructive_dilemma
+dataset_path: AndriyBilinskiy/Logic_questions_dataset
+dataset_name: default
+output_type: multiple_choice
+validation_split: subset_constructive_dilemma
+doc_to_text: "Context: {{context}}
+Question: {{question}}?"
+doc_to_target: answer
+doc_to_choice: ["так","ні"]
+metric_list:
+  - metric: acc
+    higher_is_better: true
+    aggregation: mean
+  - metric: f1
+    higher_is_better: true
+    aggregation: f1
