@@ -1,5 +1,5 @@
 task: subset_modus_ponens
-dataset_path: AndriyBilinskiy/Logic_questions_dataset
+dataset_path: AndriyBilinskiy/logical-reasoning-ua
 dataset_name: default
 output_type: multiple_choice
 validation_split: subset_modus_ponens
