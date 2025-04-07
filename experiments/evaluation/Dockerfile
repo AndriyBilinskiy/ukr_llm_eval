@@ -20,11 +20,18 @@ RUN pip install --upgrade pip \
     huggingface_hub \
     sentencepiece \
     protobuf \
-    grpcio
+    grpcio \
+    vllm
 
 WORKDIR /workspace
 VOLUME ["/workspace/output"]
 COPY config.yaml /workspace/config.yaml
 COPY run_eval.sh /workspace/run_eval.sh
+COPY subset_constructive_dilemma.yaml /workspace/subset_constructive_dilemma.yaml
+COPY subset_disjunctive_syllogism.yaml /workspace/subset_disjunctive_syllogism.yaml
+COPY subset_material_implication.yaml /workspace/subset_material_implication.yaml
+COPY subset_modus_ponens.yaml /workspace/subset_modus_ponens.yaml
+COPY subset_modus_tollens.yaml /workspace/subset_modus_tollens.yaml
+
 
 ENTRYPOINT ["bash", "/workspace/run_eval.sh"]
