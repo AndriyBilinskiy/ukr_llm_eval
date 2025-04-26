@@ -1,0 +1,271 @@
+{
+  "results": {
+    "subset_constructive_dilemma": {
+      "alias": "subset_constructive_dilemma",
+      "acc,none": 0.5725,
+      "acc_stderr,none": 0.011064948781886609,
+      "f1,none": 0.7104639349813748,
+      "f1_stderr,none": 0.009508992515521933
+    },
+    "subset_disjunctive_syllogism": {
+      "alias": "subset_disjunctive_syllogism",
+      "acc,none": 0.728,
+      "acc_stderr,none": 0.009952764880392893,
+      "f1,none": 0.8422273781902552,
+      "f1_stderr,none": 0.006710177673365847
+    },
+    "subset_material_implication": {
+      "alias": "subset_material_implication",
+      "acc,none": 0.653,
+      "acc_stderr,none": 0.010646697895969504,
+      "f1,none": 0.7764175257731959,
+      "f1_stderr,none": 0.008309088277064463
+    },
+    "subset_modus_tollens": {
+      "alias": "subset_modus_tollens",
+      "acc,none": 0.75,
+      "acc_stderr,none": 0.00968487988821878,
+      "f1,none": 0.8570611778158947,
+      "f1_stderr,none": 0.006355665154440706
+    }
+  },
+  "group_subtasks": {
+    "subset_constructive_dilemma": [],
+    "subset_disjunctive_syllogism": [],
+    "subset_material_implication": [],
+    "subset_modus_tollens": []
+  },
+  "configs": {
+    "subset_constructive_dilemma": {
+      "task": "subset_constructive_dilemma",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_constructive_dilemma",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "subset_disjunctive_syllogism": {
+      "task": "subset_disjunctive_syllogism",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_disjunctive_syllogism",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "subset_material_implication": {
+      "task": "subset_material_implication",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_material_implication",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "subset_modus_tollens": {
+      "task": "subset_modus_tollens",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_modus_tollens",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    }
+  },
+  "versions": {
+    "subset_constructive_dilemma": "Yaml",
+    "subset_disjunctive_syllogism": "Yaml",
+    "subset_material_implication": "Yaml",
+    "subset_modus_tollens": "Yaml"
+  },
+  "n-shot": {
+    "subset_constructive_dilemma": 0,
+    "subset_disjunctive_syllogism": 0,
+    "subset_material_implication": 0,
+    "subset_modus_tollens": 0
+  },
+  "higher_is_better": {
+    "subset_constructive_dilemma": {
+      "acc": true,
+      "f1": true
+    },
+    "subset_disjunctive_syllogism": {
+      "acc": true,
+      "f1": true
+    },
+    "subset_material_implication": {
+      "acc": true,
+      "f1": true
+    },
+    "subset_modus_tollens": {
+      "acc": true,
+      "f1": true
+    }
+  },
+  "n-samples": {
+    "subset_modus_tollens": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "subset_material_implication": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "subset_disjunctive_syllogism": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "subset_constructive_dilemma": {
+      "original": 2000,
+      "effective": 2000
+    }
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=bigscience/bloom-3b",
+    "model_num_parameters": 3002557440,
+    "model_dtype": "torch.float16",
+    "model_revision": "main",
+    "model_sha": "52bc5b43010b4844513826b8be3f78c7344c37d7",
+    "batch_size": 1,
+    "batch_sizes": [],
+    "device": "mps",
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "cdfec60",
+  "date": 1741259770.7215528,
+  "pretty_env_info": "PyTorch version: 2.5.1\nIs debug build: False\nCUDA used to build PyTorch: None\nROCM used to build PyTorch: N/A\n\nOS: macOS 15.0 (arm64)\nGCC version: Could not collect\nClang version: 16.0.0 (clang-1600.0.26.3)\nCMake version: version 3.30.2\nLibc version: N/A\n\nPython version: 3.11.10 (main, Oct  3 2024, 02:26:51) [Clang 14.0.6 ] (64-bit runtime)\nPython platform: macOS-15.0-arm64-arm-64bit\nIs CUDA available: False\nCUDA runtime version: No CUDA\nCUDA_MODULE_LOADING set to: N/A\nGPU models and configuration: No CUDA\nNvidia driver version: No CUDA\ncuDNN version: No CUDA\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nApple M1 Pro\n\nVersions of relevant libraries:\n[pip3] mypy-extensions==1.0.0\n[pip3] numpy==1.26.4\n[pip3] torch==2.5.1\n[conda] numpy                     1.26.4                   pypi_0    pypi\n[conda] torch                     2.5.1                    pypi_0    pypi",
+  "transformers_version": "4.48.1",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "<pad>",
+    "3"
+  ],
+  "tokenizer_eos_token": [
+    "</s>",
+    "2"
+  ],
+  "tokenizer_bos_token": [
+    "<s>",
+    "1"
+  ],
+  "eot_token_id": 2,
+  "max_length": 2048,
+  "task_hashes": {
+    "subset_modus_tollens": "5c67dc1f676cb96083c251a6ecefe25412bde3df0d8f2bcd279813928c530969",
+    "subset_material_implication": "526c38b15744065e33396ed9e621dcd21ae69142a04c0e344c62c391d3e03976",
+    "subset_disjunctive_syllogism": "d84a69b951207584f48a1f7fcb9206ee675a76e491b80703a8b7560a256db9b7",
+    "subset_constructive_dilemma": "991676caee867e98a235dddcce46f834f485de559749a24af00b4d46564bbcb4"
+  },
+  "model_source": "hf",
+  "model_name": "bigscience/bloom-3b",
+  "model_name_sanitized": "bigscience__bloom-3b",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 210370.119522166,
+  "end_time": 217034.312680291,
+  "total_evaluation_time_seconds": "6664.19315812501"
+}

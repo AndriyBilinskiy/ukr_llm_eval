@@ -1,0 +1,322 @@
+{
+  "results": {
+    "subset_constructive_dilemma": {
+      "alias": "subset_constructive_dilemma",
+      "acc,none": 0.2895,
+      "acc_stderr,none": 0.010143782487887823,
+      "f1,none": 0.11574362165525824,
+      "f1_stderr,none": 0.010917201522858532
+    },
+    "subset_disjunctive_syllogism": {
+      "alias": "subset_disjunctive_syllogism",
+      "acc,none": 0.2505,
+      "acc_stderr,none": 0.009691327871760379,
+      "f1,none": 0.0013324450366422385,
+      "f1_stderr,none": 0.0013275387433154507
+    },
+    "subset_material_implication": {
+      "alias": "subset_material_implication",
+      "acc,none": 0.243,
+      "acc_stderr,none": 0.00959278430672653,
+      "f1,none": 0.08685162846803378,
+      "f1_stderr,none": 0.009544187115636626
+    },
+    "subset_modus_ponens": {
+      "alias": "subset_modus_ponens",
+      "acc,none": 0.278,
+      "acc_stderr,none": 0.010020389418682892,
+      "f1,none": 0.07197943444730077,
+      "f1_stderr,none": 0.009093891379415162
+    },
+    "subset_modus_tollens": {
+      "alias": "subset_modus_tollens",
+      "acc,none": 0.254,
+      "acc_stderr,none": 0.009735984526351212,
+      "f1,none": 0.010610079575596816,
+      "f1_stderr,none": 0.003702896262473416
+    }
+  },
+  "group_subtasks": {
+    "subset_constructive_dilemma": [],
+    "subset_disjunctive_syllogism": [],
+    "subset_material_implication": [],
+    "subset_modus_ponens": [],
+    "subset_modus_tollens": []
+  },
+  "configs": {
+    "subset_constructive_dilemma": {
+      "task": "subset_constructive_dilemma",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_constructive_dilemma",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "subset_disjunctive_syllogism": {
+      "task": "subset_disjunctive_syllogism",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_disjunctive_syllogism",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "subset_material_implication": {
+      "task": "subset_material_implication",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_material_implication",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "subset_modus_ponens": {
+      "task": "subset_modus_ponens",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_modus_ponens",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "subset_modus_tollens": {
+      "task": "subset_modus_tollens",
+      "dataset_path": "AndriyBilinskiy/Logic_questions_dataset",
+      "dataset_name": "default",
+      "validation_split": "subset_modus_tollens",
+      "doc_to_text": "Context: {{context}} Question: {{question}}?",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "так",
+        "ні"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "higher_is_better": true,
+          "aggregation": "mean"
+        },
+        {
+          "metric": "f1",
+          "higher_is_better": true,
+          "aggregation": "f1"
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    }
+  },
+  "versions": {
+    "subset_constructive_dilemma": "Yaml",
+    "subset_disjunctive_syllogism": "Yaml",
+    "subset_material_implication": "Yaml",
+    "subset_modus_ponens": "Yaml",
+    "subset_modus_tollens": "Yaml"
+  },
+  "n-shot": {
+    "subset_constructive_dilemma": 0,
+    "subset_disjunctive_syllogism": 0,
+    "subset_material_implication": 0,
+    "subset_modus_ponens": 0,
+    "subset_modus_tollens": 0
+  },
+  "higher_is_better": {
+    "subset_constructive_dilemma": {
+      "acc": true,
+      "f1": true
+    },
+    "subset_disjunctive_syllogism": {
+      "acc": true,
+      "f1": true
+    },
+    "subset_material_implication": {
+      "acc": true,
+      "f1": true
+    },
+    "subset_modus_ponens": {
+      "acc": true,
+      "f1": true
+    },
+    "subset_modus_tollens": {
+      "acc": true,
+      "f1": true
+    }
+  },
+  "n-samples": {
+    "subset_modus_tollens": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "subset_modus_ponens": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "subset_material_implication": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "subset_disjunctive_syllogism": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "subset_constructive_dilemma": {
+      "original": 2000,
+      "effective": 2000
+    }
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=SherlockAssistant/Mistral-7B-Instruct-Ukrainian",
+    "model_num_parameters": 7241732096,
+    "model_dtype": "torch.bfloat16",
+    "model_revision": "main",
+    "model_sha": "d4ef332e8f74395575db134c33644fc8a98f3d7c",
+    "batch_size": 1,
+    "batch_sizes": [],
+    "device": "cuda",
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": null,
+  "date": 1741268681.5069287,
+  "pretty_env_info": "PyTorch version: 2.6.0+cu124\nIs debug build: False\nCUDA used to build PyTorch: 12.4\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 22.04.5 LTS (x86_64)\nGCC version: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0\nClang version: Could not collect\nCMake version: version 3.22.1\nLibc version: glibc-2.35\n\nPython version: 3.10.12 (main, Jan 17 2025, 14:35:34) [GCC 11.4.0] (64-bit runtime)\nPython platform: Linux-5.15.0-87-generic-x86_64-with-glibc2.35\nIs CUDA available: True\nCUDA runtime version: 12.1.105\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: GPU 0: NVIDIA RTX A6000\nNvidia driver version: 535.113.01\ncuDNN version: Probably one of the following:\n/usr/lib/x86_64-linux-gnu/libcudnn.so.8.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_adv_infer.so.8.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_adv_train.so.8.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_cnn_infer.so.8.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_cnn_train.so.8.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_ops_infer.so.8.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_ops_train.so.8.9.0\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:                       x86_64\nCPU op-mode(s):                     32-bit, 64-bit\nAddress sizes:                      46 bits physical, 48 bits virtual\nByte Order:                         Little Endian\nCPU(s):                             48\nOn-line CPU(s) list:                0-47\nVendor ID:                          GenuineIntel\nModel name:                         Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz\nCPU family:                         6\nModel:                              85\nThread(s) per core:                 1\nCore(s) per socket:                 24\nSocket(s):                          2\nStepping:                           7\nBogoMIPS:                           5986.90\nFlags:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat umip pku ospke avx512_vnni md_clear flush_l1d arch_capabilities\nVirtualization:                     VT-x\nHypervisor vendor:                  KVM\nVirtualization type:                full\nL1d cache:                          1.5 MiB (48 instances)\nL1i cache:                          1.5 MiB (48 instances)\nL2 cache:                           192 MiB (48 instances)\nL3 cache:                           32 MiB (2 instances)\nNUMA node(s):                       1\nNUMA node0 CPU(s):                  0-47\nVulnerability Gather data sampling: Not affected\nVulnerability Itlb multihit:        Not affected\nVulnerability L1tf:                 Not affected\nVulnerability Mds:                  Not affected\nVulnerability Meltdown:             Not affected\nVulnerability Mmio stale data:      Mitigation; Clear CPU buffers; SMT Host state unknown\nVulnerability Retbleed:             Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow: Not affected\nVulnerability Spec store bypass:    Mitigation; Speculative Store Bypass disabled via prctl and seccomp\nVulnerability Spectre v1:           Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:           Mitigation; Enhanced IBRS, IBPB conditional, RSB filling, PBRSB-eIBRS SW sequence\nVulnerability Srbds:                Not affected\nVulnerability Tsx async abort:      Mitigation; TSX disabled\n\nVersions of relevant libraries:\n[pip3] numpy==2.2.3\n[pip3] nvidia-cublas-cu12==12.4.5.8\n[pip3] nvidia-cuda-cupti-cu12==12.4.127\n[pip3] nvidia-cuda-nvrtc-cu12==12.4.127\n[pip3] nvidia-cuda-runtime-cu12==12.4.127\n[pip3] nvidia-cudnn-cu12==9.1.0.70\n[pip3] nvidia-cufft-cu12==11.2.1.3\n[pip3] nvidia-curand-cu12==10.3.5.147\n[pip3] nvidia-cusolver-cu12==11.6.1.9\n[pip3] nvidia-cusparse-cu12==12.3.1.170\n[pip3] nvidia-cusparselt-cu12==0.6.2\n[pip3] nvidia-nccl-cu12==2.21.5\n[pip3] nvidia-nvjitlink-cu12==12.4.127\n[pip3] nvidia-nvtx-cu12==12.4.127\n[pip3] torch==2.6.0\n[pip3] triton==3.2.0\n[conda] Could not collect",
+  "transformers_version": "4.49.0",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "<unk>",
+    "0"
+  ],
+  "tokenizer_eos_token": [
+    "</s>",
+    "2"
+  ],
+  "tokenizer_bos_token": [
+    "<s>",
+    "1"
+  ],
+  "eot_token_id": 2,
+  "max_length": 32768,
+  "task_hashes": {
+    "subset_modus_tollens": "5c67dc1f676cb96083c251a6ecefe25412bde3df0d8f2bcd279813928c530969",
+    "subset_modus_ponens": "df01eed05e273a86053fa8a2a5153ca083eb4520e4e62c4d1b02181f91efeb1e",
+    "subset_material_implication": "526c38b15744065e33396ed9e621dcd21ae69142a04c0e344c62c391d3e03976",
+    "subset_disjunctive_syllogism": "d84a69b951207584f48a1f7fcb9206ee675a76e491b80703a8b7560a256db9b7",
+    "subset_constructive_dilemma": "991676caee867e98a235dddcce46f834f485de559749a24af00b4d46564bbcb4"
+  },
+  "model_source": "hf",
+  "model_name": "SherlockAssistant/Mistral-7B-Instruct-Ukrainian",
+  "model_name_sanitized": "SherlockAssistant__Mistral-7B-Instruct-Ukrainian",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 1908724.509654913,
+  "end_time": 1909968.059685177,
+  "total_evaluation_time_seconds": "1243.5500302638393"
+}
