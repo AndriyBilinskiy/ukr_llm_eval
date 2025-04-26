@@ -25,7 +25,6 @@ RUN pip install --upgrade pip \
 
 WORKDIR /workspace
 VOLUME ["/workspace/output"]
-COPY config.yaml /workspace/config.yaml
 COPY run_eval.sh /workspace/run_eval.sh
 COPY subset_constructive_dilemma.yaml /workspace/subset_constructive_dilemma.yaml
 COPY subset_disjunctive_syllogism.yaml /workspace/subset_disjunctive_syllogism.yaml
