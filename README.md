@@ -21,6 +21,7 @@ This project aimed at evaluating the logical reasoning capabilities of large lan
 ├── LogicBench_translation/     # Ukrainian translation of the LogicBench dataset
 ├── LogiQA_translation/         # Ukrainian translation of the LogiQA dataset
 ├── README.md
+├── results_analysis/eval_results  # Evaluation raw results and metrics
 └── requirements.txt
 ```
 ---
