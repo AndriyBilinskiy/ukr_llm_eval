@@ -38,7 +38,7 @@ The project includes two main types of datasets:
    - Found in `dataset_generation/`, containing examples curated specifically for testing logical competence in Ukrainian.
 
 All datasets are formatted for easy evaluation with multilingual LLMs.
-The final dataset could be found in [hugginhace]([https://example.com/docs](https://huggingface.co/datasets/AndriyBilinskiy/logical-reasoning-ua))
+The final dataset could be found at [hugginhace](https://huggingface.co/datasets/AndriyBilinskiy/logical-reasoning-ua)
 
 ---
 
